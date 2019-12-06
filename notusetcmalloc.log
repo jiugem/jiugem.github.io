@@ -1,0 +1,913 @@
+[root@vm38 build]# cmake -DUSE_INTERNAL_LLVM_LIBRARY=1 ..
+-- The C compiler identification is Clang 10.0.0
+-- The CXX compiler identification is Clang 10.0.0
+-- Check for working C compiler: /usr/local/bin/clang
+-- Check for working C compiler: /usr/local/bin/clang -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/local/bin/clang++
+-- Check for working CXX compiler: /usr/local/bin/clang++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using custom linker by name: lld
+-- IPO/LTO not enabled.
+-- CMAKE_BUILD_TYPE is not set, set to default = RELWITHDEBINFO
+-- CMAKE_BUILD_TYPE: RELWITHDEBINFO
+-- Adding .gdb-index via --gdb-index linker option.
+-- Disabling compiler -pipe option (have only 6999 mb of memory)
+-- Performing Test HAVE_SSE41
+-- Performing Test HAVE_SSE41 - Failed
+-- Performing Test HAVE_SSE42
+-- Performing Test HAVE_SSE42 - Failed
+-- Performing Test HAVE_SSSE3
+-- Performing Test HAVE_SSSE3 - Failed
+-- Performing Test HAVE_AVX
+-- Performing Test HAVE_AVX - Failed
+-- Performing Test HAVE_AVX2
+-- Performing Test HAVE_AVX2 - Failed
+-- Performing Test HAVE_PCLMULQDQ
+-- Performing Test HAVE_PCLMULQDQ - Failed
+-- Performing Test HAVE_POPCNT
+-- Performing Test HAVE_POPCNT - Success
+-- Default libraries: -nodefaultlibs /usr/local/lib/clang/10.0.0/lib/linux/libclang_rt.builtins-aarch64.a  -lc -lm -lrt -lpthread -ldl
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- The ASM compiler identification is Clang
+-- Found assembler: /usr/local/bin/clang
+-- Looking for sys/random.h
+-- Looking for sys/random.h - not found
+-- Some symbols from glibc will be replaced for compatibility
+-- Using exception handler: gcc_eh
+-- Using libcxx: cxx
+-- Using libcxxfs: 
+-- Using libcxxabi: cxxabi
+-- Tests are enabled
+-- Building for: Linux-4.14.0-115.el7a.0.1.aarch64 aarch64  ; USE_STATIC_LIBRARIES=ON MAKE_STATIC_LIBRARIES=ON SPLIT_SHARED= UNBUNDLED=OFF CCACHE=CCACHE_FOUND-NOTFOUND 
+-- Using double-conversion: /home/clickhouse/ClickHouse/contrib/double-conversion : double-conversion
+-- Using ssl=1: /home/clickhouse/ClickHouse/contrib/ssl/include : ssl;crypto
+-- Found the following ICU libraries:
+--   i18n (required)
+--   uc (required)
+--   data (required)
+-- Found ICU: /usr/include (found version "50.1.2") 
+-- Using icu=1: /usr/include : /usr/lib64/libicui18n.so;/usr/lib64/libicuuc.so;/usr/lib64/libicudata.so
+-- Using Boost: /home/clickhouse/ClickHouse/contrib/boost : boost_program_options_internal,boost_system_internal,boost_filesystem_internal;boost_system_internal,boost_regex_internal
+-- Using zlib-ng: /home/clickhouse/ClickHouse/contrib/zlib-ng;/home/clickhouse/ClickHouse/build/contrib/zlib-ng : zlibstatic
+-- Using zstd: /home/clickhouse/ClickHouse/contrib/zstd/lib : zstd
+-- Using termcap: /usr/lib64/libtermcap.so
+-- Using odbc=1: /home/clickhouse/ClickHouse/contrib/unixodbc/include : unixodbc
+-- Using Poco: /home/clickhouse/ClickHouse/contrib/poco/Foundation/include/;/home/clickhouse/ClickHouse/contrib/poco/Util/include/;/home/clickhouse/ClickHouse/contrib/zlib-ng/;/home/clickhouse/ClickHouse/build/contrib/zlib-ng/ : PocoFoundation,PocoUtil,PocoNet,PocoNetSSL;ssl;crypto,PocoCrypto;ssl;crypto,PocoXML,PocoData,PocoDataODBC;unixodbc,,,PocoMongoDB,PocoRedis; MongoDB=1, Redis=1, DataODBC=1, NetSSL=1
+-- Using lz4: /home/clickhouse/ClickHouse/contrib/lz4/lib : lz4
+-- Using xxhash=1: /home/clickhouse/ClickHouse/contrib/lz4/lib : lz4
+-- Using sparsehash: /home/clickhouse/ClickHouse/contrib/sparsehash-c11
+-- Using rt: 
+-- Using line editing libraries (readline): /usr/include : /usr/lib64/libreadline.so;/usr/lib64/libtermcap.so
+-- Performing Test HAVE_READLINE_HISTORY
+-- Performing Test HAVE_READLINE_HISTORY - Success
+-- Using re2: /home/clickhouse/ClickHouse/contrib/re2 : re2;  : re2_st
+-- Using libgsasl=1: /home/clickhouse/ClickHouse/contrib/libgsasl/src;/home/clickhouse/ClickHouse/contrib/libgsasl/linux_x86_64/include : libgsasl
+-- Using librdkafka=:  :  
+-- Using capnp=1: capnpc
+-- LLVM version: 
+-- LLVM include Directory: /home/clickhouse/ClickHouse/contrib/llvm/llvm/include;/home/clickhouse/ClickHouse/build/contrib/llvm/llvm/include;/home/clickhouse/ClickHouse/contrib/llvm/clang/include;/home/clickhouse/ClickHouse/build/contrib/llvm/clang/include;/home/clickhouse/ClickHouse/build/contrib/llvm/llvm/tools/clang/include;/home/clickhouse/ClickHouse/contrib/llvm/lld/include;/home/clickhouse/ClickHouse/build/contrib/llvm/lld/include;/home/clickhouse/ClickHouse/build/contrib/llvm/llvm/tools/lld/include
+-- LLVM library Directory: /home/clickhouse/ClickHouse/build/contrib/llvm/llvm
+-- LLVM C++ compiler flags: 
+-- Using h3=1: /home/clickhouse/ClickHouse/contrib/h3/src/h3lib/include : h3
+-- Using cpuid=: CPUID_INCLUDE_DIR-NOTFOUND : CPUID_LIBRARY-NOTFOUND
+-- Using cpuinfo=: CPUINFO_INCLUDE_DIR-NOTFOUND : CPUINFO_LIBRARY-NOTFOUND
+-- Using libxml2: /home/clickhouse/ClickHouse/contrib/libxml2/include;/home/clickhouse/ClickHouse/contrib/libxml2-cmake/linux_x86_64/include : libxml2
+-- Using brotli=1: /home/clickhouse/ClickHouse/contrib/brotli/c/include : brotli
+-- Using protobuf=1: /home/clickhouse/ClickHouse/contrib/protobuf/src : libprotobuf : /home/clickhouse/ClickHouse/build/contrib/protobuf/cmake/protoc
+-- Using pdqsort: /home/clickhouse/ClickHouse/contrib/pdqsort
+-- Using hdfs3=:  : 
+-- Using consistent-hashing:  : consistent-hashing
+-- Using snappy: snappy
+-- Using Parquet: arrow_static: ; parquet_static: ; thrift_static
+CMake Warning at cmake/find/simdjson.cmake:7 (message):
+  submodule contrib/simdjson requires support of SSE4.2 instructions
+Call Stack (most recent call first):
+  CMakeLists.txt:332 (include)
+
+
+-- Using rapidjson=1: /home/clickhouse/ClickHouse/contrib/rapidjson/include
+-- Using fastops=0:  : 
+-- Using snappy: snappy
+-- Using internal=ON orc=1: /home/clickhouse/ClickHouse/contrib/orc/c++/include : orc
+-- Using cityhash:  : cityhash
+-- Using farmhash:  : farmhash
+-- Using metrohash: /home/clickhouse/ClickHouse/contrib/libmetrohash/src : metrohash
+-- Using btrie:  : btrie
+-- Using gtest=1: /home/clickhouse/ClickHouse/contrib/googletest/googletest : gtest_main;gtest : 
+-- Using jemalloc=1: /home/clickhouse/ClickHouse/contrib/jemalloc-cmake/include;/home/clickhouse/ClickHouse/contrib/jemalloc-cmake/include_linux_x86_64 : jemalloc
+-- Using cctz: /home/clickhouse/ClickHouse/contrib/cctz/include : cctz
+-- Using mysqlclient=1:  : mariadbclient; staticlib=
+-- Link jemalloc: jemalloc
+-- compiler C   = /usr/local/bin/clang   -gdwarf-aranges -fno-omit-frame-pointer  -Wall -Wno-unused-command-line-argument  -O2 -g -DNDEBUG -O3 
+-- compiler CXX = /usr/local/bin/clang++  -fsized-deallocation  -gdwarf-aranges  -fno-omit-frame-pointer  -Wall -Wno-unused-command-line-argument  -Wnon-virtual-dtor -O2 -g -DNDEBUG -O3 
+-- LINKER_FLAGS =  -fuse-ld=lld -rdynamic -Wl,--gdb-index -Wl,--no-undefined 
+-- ZSTD VERSION 1.3.17
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Architecture: aarch64
+-- Check size of off64_t
+-- Check size of off64_t - done
+-- Looking for fseeko
+-- Looking for fseeko - found
+-- Looking for strerror
+-- Looking for strerror - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for stdarg.h
+-- Looking for stdarg.h - found
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_HIDDEN
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_HIDDEN - Success
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_INTERNAL
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_INTERNAL - Success
+-- Performing Test HAVE_BUILTIN_CTZL
+-- Performing Test HAVE_BUILTIN_CTZL - Success
+-- Performing Test HAVE_SSE2_INTRIN
+-- Performing Test HAVE_SSE2_INTRIN - Failed
+-- Performing Test HAVE_SSE42_INTRIN
+-- Performing Test HAVE_SSE42_INTRIN - Failed
+-- Performing Test HAVE_SSE42CRC_INTRIN
+-- Performing Test HAVE_SSE42CRC_INTRIN - Failed
+-- Performing Test HAVE_PCLMULQDQ_INTRIN
+-- Performing Test HAVE_PCLMULQDQ_INTRIN - Failed
+-- Performing Test MFPU_NEON_AVAILABLE
+-- Performing Test MFPU_NEON_AVAILABLE - Success
+-- Architecture-specific source files: arch/aarch64/fill_window_arm.c;arch/aarch64/crc32_acle.c;arch/aarch64/insert_string_acle.c;arch/aarch64/adler32_neon.c
+-- The following features have been enabled:
+
+ * CMAKE_BUILD_TYPE, Build type: RELWITHDEBINFO (selected)
+ * ZLIB_COMPAT, Provide a zlib-compatible API
+ * WITH_GZFILEOP, Compile with support for gzFile-related functions
+ * WITH_OPTIM, Build with optimisation
+ * WITH_NEW_STRATEGIES, Use new strategies
+ * WITH_ACLE, Build with ACLE CRC
+ * WITH_NEON, Build with NEON intrinsics
+ * ACLE_CRC, Support CRC hash generation using the ACLE instruction set, using "-march=armv8-a+crc"
+ * NEON_FILLWINDOW, Support NEON instructions in fill_window_arm, using "-march=armv8-a+crc+simd"
+
+-- The following OPTIONAL packages have been found:
+
+ * ICU
+
+-- The following REQUIRED packages have been found:
+
+ * Threads
+
+-- Looking for asprintf
+-- Looking for asprintf - found
+-- Looking for inet_pton
+-- Looking for inet_pton - found
+-- Looking for strcasecmp
+-- Looking for strcasecmp - found
+-- Looking for strlcat
+-- Looking for strlcat - not found
+-- Looking for strlcpy
+-- Looking for strlcpy - not found
+-- Looking for strndup
+-- Looking for strndup - found
+-- Looking for strnlen
+-- Looking for strnlen - found
+-- Looking for strsep
+-- Looking for strsep - found
+-- Looking for timegm
+-- Looking for timegm - found
+-- Looking for arc4random_buf
+-- Looking for arc4random_buf - not found
+-- Looking for arc4random_uniform
+-- Looking for arc4random_uniform - not found
+-- Looking for explicit_bzero
+-- Looking for explicit_bzero - not found
+-- Looking for getpagesize
+-- Looking for getpagesize - found
+-- Looking for timingsafe_bcmp
+-- Looking for timingsafe_bcmp - not found
+-- Looking for timingsafe_memcmp
+-- Looking for timingsafe_memcmp - not found
+-- Looking for memmem
+-- Looking for memmem - found
+-- Looking for include file err.h
+-- Looking for include file err.h - found
+-- Looking for clock_gettime in rt
+-- Looking for clock_gettime in rt - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Found GSSAPI: -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
+-- Found Git: /usr/bin/git (found version "1.8.3.1") 
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for include file alloca.h
+-- Looking for include file alloca.h - found
+-- Looking for include file arpa/inet.h
+-- Looking for include file arpa/inet.h - found
+-- Looking for include file dlfcn.h
+-- Looking for include file dlfcn.h - found
+-- Looking for include file fcntl.h
+-- Looking for include file fcntl.h - found
+-- Looking for include file float.h
+-- Looking for include file float.h - found
+-- Looking for include file limits.h
+-- Looking for include file limits.h - found
+-- Looking for include file pwd.h
+-- Looking for include file pwd.h - found
+-- Looking for include file sched.h
+-- Looking for include file sched.h - found
+-- Looking for include file select.h
+-- Looking for include file select.h - not found
+-- Looking for include file signal.h
+-- Looking for include file signal.h - found
+-- Looking for include file stdlib.h
+-- Looking for include file stdlib.h - found
+-- Looking for include file string.h
+-- Looking for include file string.h - found
+-- Looking for include file strings.h
+-- Looking for include file strings.h - found
+-- Looking for include file sys/ioctl.h
+-- Looking for include file sys/ioctl.h - found
+-- Looking for include file sys/select.h
+-- Looking for include file sys/select.h - found
+-- Looking for include file sys/socket.h
+-- Looking for include file sys/socket.h - found
+-- Looking for include file sys/un.h
+-- Looking for include file sys/un.h - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file utime.h
+-- Looking for include file utime.h - found
+-- Looking for include file ucontext.h
+-- Looking for include file ucontext.h - found
+-- Looking for alloca
+-- Looking for alloca - not found
+-- Looking for dlerror
+-- Looking for dlerror - not found
+-- Looking for dlopen
+-- Looking for dlopen - not found
+-- Looking for fcntl
+-- Looking for fcntl - found
+-- Looking for memcpy
+-- Looking for memcpy - found
+-- Looking for nl_langinfo
+-- Looking for nl_langinfo - found
+-- Looking for setlocale
+-- Looking for setlocale - found
+-- Looking for poll
+-- Looking for poll - found
+-- Check size of char *
+-- Check size of char * - done
+-- Check size of int
+-- Check size of int - done
+-- Check size of long
+-- Check size of long - done
+-- Check size of long long
+-- Check size of long long - done
+-- Check size of size_t
+-- Check size of size_t - done
+-- Check size of uchar
+-- Check size of uchar - failed
+-- Check size of uint
+-- Check size of uint - done
+-- Check size of ulong
+-- Check size of ulong - done
+-- Check size of int8
+-- Check size of int8 - failed
+-- Check size of uint8
+-- Check size of uint8 - failed
+-- Check size of int16
+-- Check size of int16 - failed
+-- Check size of uint16
+-- Check size of uint16 - failed
+-- Check size of int32
+-- Check size of int32 - failed
+-- Check size of uint32
+-- Check size of uint32 - failed
+-- Check size of int64
+-- Check size of int64 - failed
+-- Check size of uint64
+-- Check size of uint64 - failed
+-- Check size of socklen_t
+-- Check size of socklen_t - failed
+-- Performing Test SOCKET_SIZE_FOUND_socklen_t
+-- Performing Test SOCKET_SIZE_FOUND_socklen_t - Success
+-- Looking for dlopen
+-- Looking for dlopen - not found
+-- Looking for dlopen in dl
+-- Looking for dlopen in dl - found
+-- Looking for pthread_getspecific
+-- Looking for pthread_getspecific - not found
+-- Looking for pthread_getspecific in pthread
+-- Looking for pthread_getspecific in pthread - found
+-- Looking for gethostbyname_r
+-- Looking for gethostbyname_r - found
+-- Looking for setsockopt
+-- Looking for setsockopt - found
+-- TLS library/version: LibreSSL 2.6.4
+-- SYSTEM_LIBS zlibstatic;dl;glibc-compatibility;pthread;pthread;dl;glibc-compatibility;ssl;crypto
+-- Could NOT find CURL (missing: CURL_LIBRARY CURL_INCLUDE_DIR) 
+-- Dynamic column API support: ON
+-- SYSTEM processor: aarch64
+-- MariaDB Connector/c configuration:
+-- Static PLUGINS mysql_native_password;caching_sha2_password;sha256_password;mysql_old_password;pvio_socket
+-- Dynamic PLUGINS 
+-- CPack generation: TGZ
+-- SSL support: OPENSSL Libs: ssl;crypto
+-- Zlib support: ON
+-- Installation layout: DEFAULT
+-- Include files will be installed in include/mariadb
+-- Libraries will be installed in lib/mariadb
+-- Binaries will be installed in bin
+-- Documentation included from 
+-- Required: 
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for byteswap.h
+-- Looking for byteswap.h - found
+-- Looking for sys/endian.h
+-- Looking for sys/endian.h - not found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/resource.h
+-- Looking for sys/resource.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for sys/uio.h
+-- Looking for sys/uio.h - found
+-- Looking for windows.h
+-- Looking for windows.h - not found
+-- Looking for zlibVersion in z
+-- Looking for zlibVersion in z - found
+-- Looking for lzo1x_1_15_compress in lzo2
+-- Looking for lzo1x_1_15_compress in lzo2 - not found
+-- Performing Test HAVE_VISUAL_STUDIO_ARCH_AVX
+-- Performing Test HAVE_VISUAL_STUDIO_ARCH_AVX - Failed
+-- Performing Test HAVE_VISUAL_STUDIO_ARCH_AVX2
+-- Performing Test HAVE_VISUAL_STUDIO_ARCH_AVX2 - Failed
+-- Performing Test HAVE_CLANG_MAVX
+-- Performing Test HAVE_CLANG_MAVX - Success
+-- Performing Test HAVE_CLANG_MBMI2
+-- Performing Test HAVE_CLANG_MBMI2 - Success
+-- Performing Test HAVE_BUILTIN_EXPECT
+-- Performing Test HAVE_BUILTIN_EXPECT - Success
+-- Performing Test HAVE_BUILTIN_CTZ
+-- Performing Test HAVE_BUILTIN_CTZ - Success
+-- Performing Test SNAPPY_HAVE_SSSE3
+-- Performing Test SNAPPY_HAVE_SSSE3 - Failed
+-- Performing Test SNAPPY_HAVE_BMI2
+-- Performing Test SNAPPY_HAVE_BMI2 - Failed
+-- Looking for mmap
+-- Looking for mmap - found
+-- Looking for sysconf
+-- Looking for sysconf - found
+-- Performing Test ORC_CXX_HAS_INITIALIZER_LIST
+-- Performing Test ORC_CXX_HAS_INITIALIZER_LIST - Success
+-- Performing Test ORC_CXX_HAS_NOEXCEPT
+-- Performing Test ORC_CXX_HAS_NOEXCEPT - Success
+-- Performing Test ORC_CXX_HAS_NULLPTR
+-- Performing Test ORC_CXX_HAS_NULLPTR - Success
+-- Performing Test ORC_CXX_HAS_OVERRIDE
+-- Performing Test ORC_CXX_HAS_OVERRIDE - Success
+-- Performing Test ORC_CXX_HAS_UNIQUE_PTR
+-- Performing Test ORC_CXX_HAS_UNIQUE_PTR - Success
+-- Performing Test ORC_CXX_HAS_CSTDINT
+-- Performing Test ORC_CXX_HAS_CSTDINT - Success
+-- Performing Test ORC_CXX_HAS_THREAD_LOCAL
+-- Performing Test ORC_CXX_HAS_THREAD_LOCAL - Success
+-- Performing Test HAS_PREAD
+-- Performing Test HAS_PREAD - Success
+-- Performing Test HAS_STRPTIME
+-- Performing Test HAS_STRPTIME - Success
+-- Performing Test HAS_STOLL
+-- Performing Test HAS_STOLL - Success
+-- Performing Test INT64_IS_LL
+-- Performing Test INT64_IS_LL - Success
+-- Performing Test HAS_DIAGNOSTIC_PUSH
+-- Performing Test HAS_DIAGNOSTIC_PUSH - Success
+-- Performing Test HAS_STD_ISNAN
+-- Performing Test HAS_STD_ISNAN - Success
+-- Performing Test HAS_STD_MUTEX
+-- Performing Test HAS_STD_MUTEX - Success
+-- Performing Test NEEDS_REDUNDANT_MOVE
+-- Performing Test NEEDS_REDUNDANT_MOVE - Success
+-- Performing Test HAS_PRE_1970
+-- Performing Test HAS_PRE_1970 - Success
+-- Performing Test HAS_POST_2038
+-- Performing Test HAS_POST_2038 - Success
+-- Performing Test NEEDS_Z_PREFIX
+-- Performing Test NEEDS_Z_PREFIX - Failed
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Looking for inttypes.h
+-- Looking for inttypes.h - found
+-- Looking for netdb.h
+-- Looking for netdb.h - found
+-- Looking for netinet/in.h
+-- Looking for netinet/in.h - found
+-- Looking for signal.h
+-- Looking for signal.h - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for sys/param.h
+-- Looking for sys/param.h - found
+-- Looking for sys/stat.h
+-- Looking for sys/stat.h - found
+-- Looking for poll.h
+-- Looking for poll.h - found
+-- Looking for sys/poll.h
+-- Looking for sys/poll.h - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for gethostbyname_r
+-- Looking for gethostbyname_r - found
+-- Looking for strerror_r
+-- Looking for strerror_r - found
+-- Looking for sched_get_priority_max
+-- Looking for sched_get_priority_max - found
+-- Looking for sched_get_priority_min
+-- Looking for sched_get_priority_min - found
+-- Performing Test STRERROR_R_CHAR_P
+-- Performing Test STRERROR_R_CHAR_P - Success
+-- Using OpenSSL from /home/clickhouse/ClickHouse/contrib/ssl
+-- Looking for pthread_setaffinity_np in pthread
+-- Looking for pthread_setaffinity_np in pthread - found
+-- Performing Test HAVE_THREE_PARAM_SCHED_SETAFFINITY
+-- Performing Test HAVE_THREE_PARAM_SCHED_SETAFFINITY - Success
+-- Found ODBC: unixodbc  
+-- Found PythonInterp: /usr/bin/python (found version "2.7.5") 
+CMake Deprecation Warning at contrib/llvm/llvm/CMakeLists.txt:14 (cmake_policy):
+  The OLD behavior for policy CMP0051 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+
+-- Performing Test LLVM_NO_OLD_LIBSTDCXX
+-- Performing Test LLVM_NO_OLD_LIBSTDCXX - Success
+-- Looking for errno.h
+CMake Warning (dev) at /usr/local/share/cmake-3.15/Modules/CheckIncludeFile.cmake:80 (message):
+  Policy CMP0075 is not set: Include file check macros honor
+  CMAKE_REQUIRED_LIBRARIES.  Run "cmake --help-policy CMP0075" for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.
+
+  CMAKE_REQUIRED_LIBRARIES is set to:
+
+    m
+
+  For compatibility with CMake 3.11 and below this check is ignoring it.
+Call Stack (most recent call first):
+  contrib/llvm/llvm/cmake/config-ix.cmake:27 (check_include_file)
+  contrib/llvm/llvm/CMakeLists.txt:557 (include)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Looking for errno.h - found
+-- Looking for link.h
+-- Looking for link.h - found
+-- Looking for malloc.h
+-- Looking for malloc.h - found
+-- Looking for malloc/malloc.h
+-- Looking for malloc/malloc.h - not found
+-- Looking for termios.h
+-- Looking for termios.h - found
+-- Looking for valgrind/valgrind.h
+-- Looking for valgrind/valgrind.h - not found
+-- Looking for zlib.h
+-- Looking for zlib.h - found
+-- Looking for fenv.h
+-- Looking for fenv.h - found
+-- Looking for FE_ALL_EXCEPT
+-- Looking for FE_ALL_EXCEPT - found
+-- Looking for FE_INEXACT
+-- Looking for FE_INEXACT - found
+-- Looking for mach/mach.h
+-- Looking for mach/mach.h - not found
+-- Looking for histedit.h
+-- Looking for histedit.h - not found
+-- Looking for CrashReporterClient.h
+-- Looking for CrashReporterClient.h - not found
+-- Looking for linux/magic.h
+-- Looking for linux/magic.h - found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Looking for pthread_getspecific in pthread
+-- Looking for pthread_getspecific in pthread - found
+-- Looking for pthread_rwlock_init in pthread
+-- Looking for pthread_rwlock_init in pthread - found
+-- Looking for pthread_mutex_lock in pthread
+-- Looking for pthread_mutex_lock in pthread - found
+-- Looking for dlopen in dl
+-- Looking for dlopen in dl - found
+-- Looking for clock_gettime in rt
+-- Looking for clock_gettime in rt - found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Looking for xar_open in xar
+-- Looking for xar_open in xar - not found
+-- Looking for arc4random
+-- Looking for arc4random - not found
+-- Looking for backtrace
+-- Looking for backtrace - found
+-- backtrace facility detected in default set of libraries
+-- Found Backtrace: /usr/include  
+-- Performing Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW
+-- Performing Test C_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW - Success
+-- Looking for _Unwind_Backtrace
+-- Looking for _Unwind_Backtrace - found
+-- Looking for sysconf
+-- Looking for sysconf - found
+-- Looking for getrusage
+-- Looking for getrusage - found
+-- Looking for setrlimit
+-- Looking for setrlimit - found
+-- Looking for isatty
+-- Looking for isatty - found
+-- Looking for futimens
+-- Looking for futimens - found
+-- Looking for futimes
+-- Looking for futimes - found
+-- Looking for posix_fallocate
+-- Looking for posix_fallocate - found
+-- Looking for sigaltstack
+-- Looking for sigaltstack - found
+-- Looking for lseek64
+-- Looking for lseek64 - found
+-- Looking for mallctl
+-- Looking for mallctl - not found
+-- Looking for mallinfo
+-- Looking for mallinfo - found
+-- Looking for malloc_zone_statistics
+-- Looking for malloc_zone_statistics - not found
+-- Looking for getrlimit
+-- Looking for getrlimit - found
+-- Looking for posix_spawn
+-- Looking for posix_spawn - found
+-- Looking for pread
+-- Looking for pread - found
+-- Looking for realpath
+-- Looking for realpath - found
+-- Looking for sbrk
+-- Looking for sbrk - found
+-- Looking for strerror_s
+-- Looking for strerror_s - not found
+-- Looking for setenv
+-- Looking for setenv - found
+-- Looking for dladdr
+-- Looking for dladdr - not found
+-- Looking for __GLIBC__
+-- Looking for __GLIBC__ - found
+-- Looking for sched_getaffinity
+-- Looking for sched_getaffinity - found
+-- Looking for CPU_COUNT
+-- Looking for CPU_COUNT - found
+-- Looking for pthread_getname_np
+-- Looking for pthread_getname_np - found
+-- Looking for pthread_setname_np
+-- Looking for pthread_setname_np - found
+-- Performing Test HAVE_CXX_ATOMICS_WITHOUT_LIB
+-- Performing Test HAVE_CXX_ATOMICS_WITHOUT_LIB - Success
+-- Performing Test HAVE_CXX_ATOMICS64_WITHOUT_LIB
+-- Performing Test HAVE_CXX_ATOMICS64_WITHOUT_LIB - Success
+-- Performing Test LLVM_HAS_ATOMICS
+-- Performing Test LLVM_HAS_ATOMICS - Success
+-- Performing Test SUPPORTS_VARIADIC_MACROS_FLAG
+-- Performing Test SUPPORTS_VARIADIC_MACROS_FLAG - Success
+-- Performing Test SUPPORTS_GNU_ZERO_VARIADIC_MACRO_ARGUMENTS_FLAG
+-- Performing Test SUPPORTS_GNU_ZERO_VARIADIC_MACRO_ARGUMENTS_FLAG - Success
+-- Native target architecture is AArch64
+-- Threads enabled.
+-- Doxygen disabled.
+-- Go bindings disabled.
+-- Could NOT find OCaml (missing: OCAMLFIND OCAML_VERSION OCAML_STDLIB_PATH) 
+-- Could NOT find OCaml (missing: OCAMLFIND OCAML_VERSION OCAML_STDLIB_PATH) 
+-- OCaml bindings disabled.
+-- Could NOT find Python module pygments
+-- Could NOT find Python module pygments.lexers.c_cpp
+-- Could NOT find Python module yaml
+-- LLVM host triple: aarch64-unknown-linux-gnu
+-- LLVM default target triple: aarch64-unknown-linux-gnu
+-- Performing Test C_SUPPORTS_FPIC
+-- Performing Test C_SUPPORTS_FPIC - Success
+-- Performing Test CXX_SUPPORTS_FPIC
+-- Performing Test CXX_SUPPORTS_FPIC - Success
+-- Building with -fPIC
+-- Performing Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG
+-- Performing Test SUPPORTS_FVISIBILITY_INLINES_HIDDEN_FLAG - Success
+-- Performing Test C_SUPPORTS_WERROR_DATE_TIME
+-- Performing Test C_SUPPORTS_WERROR_DATE_TIME - Success
+-- Performing Test CXX_SUPPORTS_WERROR_DATE_TIME
+-- Performing Test CXX_SUPPORTS_WERROR_DATE_TIME - Success
+-- Performing Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW
+-- Performing Test CXX_SUPPORTS_WERROR_UNGUARDED_AVAILABILITY_NEW - Success
+-- Performing Test CXX_SUPPORTS_CXX11
+-- Performing Test CXX_SUPPORTS_CXX11 - Success
+-- Performing Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG
+-- Performing Test CXX_SUPPORTS_MISSING_FIELD_INITIALIZERS_FLAG - Success
+-- Performing Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG
+-- Performing Test C_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG - Success
+-- Performing Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG
+-- Performing Test CXX_SUPPORTS_COVERED_SWITCH_DEFAULT_FLAG - Success
+-- Performing Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR
+-- Performing Test CXX_WONT_WARN_ON_FINAL_NONVIRTUALDTOR - Success
+-- Performing Test C_SUPPORTS_DELETE_NON_VIRTUAL_DTOR_FLAG
+-- Performing Test C_SUPPORTS_DELETE_NON_VIRTUAL_DTOR_FLAG - Success
+-- Performing Test CXX_SUPPORTS_DELETE_NON_VIRTUAL_DTOR_FLAG
+-- Performing Test CXX_SUPPORTS_DELETE_NON_VIRTUAL_DTOR_FLAG - Success
+-- Performing Test C_WCOMMENT_ALLOWS_LINE_WRAP
+-- Performing Test C_WCOMMENT_ALLOWS_LINE_WRAP - Success
+-- Performing Test C_SUPPORTS_STRING_CONVERSION_FLAG
+-- Performing Test C_SUPPORTS_STRING_CONVERSION_FLAG - Success
+-- Performing Test CXX_SUPPORTS_STRING_CONVERSION_FLAG
+-- Performing Test CXX_SUPPORTS_STRING_CONVERSION_FLAG - Success
+-- Performing Test C_SUPPORTS_FNO_FUNCTION_SECTIONS
+-- Performing Test C_SUPPORTS_FNO_FUNCTION_SECTIONS - Success
+-- Performing Test C_SUPPORTS_FFUNCTION_SECTIONS
+-- Performing Test C_SUPPORTS_FFUNCTION_SECTIONS - Success
+-- Performing Test CXX_SUPPORTS_FFUNCTION_SECTIONS
+-- Performing Test CXX_SUPPORTS_FFUNCTION_SECTIONS - Success
+-- Performing Test C_SUPPORTS_FDATA_SECTIONS
+-- Performing Test C_SUPPORTS_FDATA_SECTIONS - Success
+-- Performing Test CXX_SUPPORTS_FDATA_SECTIONS
+-- Performing Test CXX_SUPPORTS_FDATA_SECTIONS - Success
+-- Linker detection: LLD
+-- Targeting X86
+-- Targeting AArch64
+-- /home/clickhouse/ClickHouse/utils: Have 6988 megabytes of memory. Limiting concurrent linkers jobs to 1 and compiler jobs to OFF
+-- /home/clickhouse/ClickHouse/dbms: Have 6988 megabytes of memory. Limiting concurrent linkers jobs to 1 and compiler jobs to 4
+-- Will build ClickHouse 19.17.4.11 revision 54428 
+-- Looking for readpassphrase
+-- Looking for readpassphrase - not found
+-- Target check already exists
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/clickhouse/ClickHouse/build
+[root@vm38 build]# 
+[root@vm38 build]# 
+[root@vm38 build]# make -j 2
+Scanning dependencies of target cxxabi
+Scanning dependencies of target glibc-compatibility
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/glibc-compatibility.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/stdlib_stdexcept.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_divzero.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_divzerof.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_invalid.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_invalidf.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_virtual.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_oflow.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_thread_atexit.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_oflowf.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_uflow.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_uflowf.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/fallback_malloc.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_xflow.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/__math_xflowf.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/exp.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/exp2.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_guard.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/exp2f.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/exp2f_data.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_default_handlers.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/exp_data.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/fallocate.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/fcntl.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/futimens.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/getrandom.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_personality.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/glob.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/lgamma.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/log.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/log2.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/stdlib_exception.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/log2_data.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/abort_message.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/log_data.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/logf.c.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_demangle.cpp.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/logf_data.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/pipe2.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/posix_spawn.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/pow.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/pow_data.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/pwritev.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/sched_cpucount.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/sched_getcpu.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/syscall_ret.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/timespec_get.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/utimensat.c.o
+[  0%] Building C object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/vasprintf.c.o
+[  0%] Building ASM object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/aarch64/syscall.s.o
+clang-10: warning: argument unused during compilation: '-D NDEBUG' [-Wunused-command-line-argument]
+clang-10: warning: argument unused during compilation: '-D OS_LINUX' [-Wunused-command-line-argument]
+[  0%] Building ASM object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/musl/aarch64/longjmp.s.o
+clang-10: warning: argument unused during compilation: '-D NDEBUG' [-Wunused-command-line-argument]
+clang-10: warning: argument unused during compilation: '-D OS_LINUX' [-Wunused-command-line-argument]
+[  0%] Building CXX object libs/libglibc-compatibility/CMakeFiles/glibc-compatibility.dir/libcxxabi/cxa_thread_atexit.cpp.o
+[  0%] Linking CXX static library libglibc-compatibility.a
+[  0%] Built target glibc-compatibility
+Scanning dependencies of target transform_mutex.h
+[  0%] Creating mutex.h for re2_st library.
+[  0%] Built target transform_mutex.h
+Scanning dependencies of target transform_filtered_re2.h
+[  0%] Creating filtered_re2.h for re2_st library.
+[  0%] Built target transform_filtered_re2.h
+Scanning dependencies of target transform_re2.h
+[  0%] Creating re2.h for re2_st library.
+[  0%] Built target transform_re2.h
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_unexpected.cpp.o
+Scanning dependencies of target transform_set.h
+[  0%] Creating set.h for re2_st library.
+[  0%] Built target transform_set.h
+Scanning dependencies of target transform_stringpiece.h
+[  0%] Creating stringpiece.h for re2_st library.
+[  0%] Built target transform_stringpiece.h
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_exception.cpp.o
+Scanning dependencies of target llvm_vcsrevision_h
+[  0%] Generating VCSRevision.h
+[  0%] Built target llvm_vcsrevision_h
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_handlers.cpp.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_exception_storage.cpp.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/private_typeinfo.cpp.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/stdlib_typeinfo.cpp.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_aux_runtime.cpp.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/cxa_vector.cpp.o
+[  0%] Building CXX object contrib/libcxxabi-cmake/CMakeFiles/cxxabi.dir/__/libcxxabi/src/stdlib_new_delete.cpp.o
+[  0%] Linking CXX static library libcxxabi.a
+[  0%] Built target cxxabi
+Scanning dependencies of target cxx
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/optional.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/variant.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/chrono.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/thread.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/experimental/memory_resource.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/iostream.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/strstream.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/ios.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/future.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/shared_mutex.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/condition_variable.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/hash.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/string.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/debug.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/stdexcept.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/utility.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/any.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/exception.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/memory.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/new.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/valarray.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/vector.cpp.o
+[  0%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/algorithm.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/functional.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/regex.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/bind.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/mutex.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/charconv.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/typeinfo.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/locale.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/filesystem/operations.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/filesystem/int128_builtins.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/filesystem/directory_iterator.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/system_error.cpp.o
+[  1%] Building CXX object contrib/libcxx-cmake/CMakeFiles/cxx.dir/__/libcxx/src/random.cpp.o
+[  1%] Linking CXX static library libcxx.a
+[  1%] Built target cxx
+Scanning dependencies of target zlibstatic
+Scanning dependencies of target kj
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/adler32.c.o
+[  1%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/array.c++.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/compress.c.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/crc32.c.o
+[  1%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/common.c++.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/deflate.c.o
+[  1%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/debug.c++.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/deflate_fast.c.o
+[  1%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/exception.c++.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/deflate_medium.c.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/deflate_slow.c.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/functable.c.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/inflate.c.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/infback.c.o
+[  1%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/inftrees.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/inffast.c.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/io.c++.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/match.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/trees.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/uncompr.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/zutil.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/gzclose.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/gzlib.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/gzread.c.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/memory.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/mutex.c++.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/gzwrite.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/arch/aarch64/fill_window_arm.c.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/string.c++.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/arch/aarch64/crc32_acle.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/arch/aarch64/insert_string_acle.c.o
+[  2%] Building C object contrib/zlib-ng/CMakeFiles/zlibstatic.dir/arch/aarch64/adler32_neon.c.o
+[  2%] Linking CXX static library libz.a
+[  2%] Built target zlibstatic
+Scanning dependencies of target boost_system_internal
+[  2%] Building CXX object contrib/boost-cmake/CMakeFiles/boost_system_internal.dir/__/boost/libs/system/src/error_code.cpp.o
+[  2%] Linking CXX static library libboost_system_internal.a
+[  2%] Built target boost_system_internal
+Scanning dependencies of target cityhash
+[  2%] Building CXX object contrib/cityhash102/CMakeFiles/cityhash.dir/src/city.cc.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/hash.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/table.c++.o
+[  2%] Linking CXX static library libcityhash.a
+[  2%] Built target cityhash
+Scanning dependencies of target cctz
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/civil_time_detail.cc.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/thread.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/main.c++.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_fixed.cc.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_format.cc.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_if.cc.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_impl.cc.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/arena.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/test-helpers.c++.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_info.cc.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/units.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/encoding.c++.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_libc.cc.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/refcount.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/string-tree.c++.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_lookup.cc.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/time.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/filesystem.c++.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/time_zone_posix.cc.o
+[  2%] Building CXX object contrib/cctz-cmake/CMakeFiles/cctz.dir/__/cctz/src/zone_info_source.cc.o
+[  2%] Linking CXX static library libcctz.a
+[  2%] Built target cctz
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/filesystem-disk-unix.c++.o
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/filesystem-disk-win32.c++.o
+Scanning dependencies of target apple_rt
+[  2%] Building CXX object contrib/capnproto-cmake/CMakeFiles/kj.dir/__/capnproto/c++/src/kj/parse/char.c++.o
+[  2%] Building CXX object libs/libcommon/CMakeFiles/apple_rt.dir/src/apple_rt.cpp.o
+[  2%] Linking CXX static library libapple_rt.a
+[  2%] Built target apple_rt
+Scanning dependencies of target jemalloc
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/arena.c.o
+[  2%] Linking CXX static library libkj.a
+[  2%] Built target kj
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/background_thread.c.o
+Scanning dependencies of target gtest
+[  2%] Building CXX object contrib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/base.c.o
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/bin.c.o
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/bitmap.c.o
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/ckh.c.o
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/ctl.c.o
+[  2%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/div.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/extent.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/extent_dss.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/extent_mmap.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/hash.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/hook.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/jemalloc.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/large.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/log.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/malloc_io.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/mutex.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/mutex_pool.c.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/nstime.c.o
+[  3%] Linking CXX static library libgtest.a
+[  3%] Built target gtest
+Scanning dependencies of target string_utils
+[  3%] Building CXX object dbms/src/Common/StringUtils/CMakeFiles/string_utils.dir/StringUtils.cpp.o
+[  3%] Building C object contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/pages.c.o
+/home/clickhouse/ClickHouse/contrib/jemalloc/src/pages.c:315:6: error: use of undeclared identifier 'JEMALLOC_MADV_FREE'
+            JEMALLOC_MADV_FREE
+            ^
+1 error generated.
+make[2]: *** [contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/__/jemalloc/src/pages.c.o] 错误 1
+make[1]: *** [contrib/jemalloc-cmake/CMakeFiles/jemalloc.dir/all] 错误 2
+make[1]: *** 正在等待未完成的任务....
+[  3%] Linking CXX static library libstring_utils.a
+[  3%] Built target string_utils
+make: *** [all] 错误 2
