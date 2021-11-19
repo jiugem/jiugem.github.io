@@ -1,0 +1,535 @@
+﻿bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.448837 [ 17218 ] {} <Error> flow_origin_multi_prod.source_weixi_tf_f_user_newest_local: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicatedMerg
+eTree::LogEntryPtr&)>: Code: 33, e.displayText() = DB::Exception: Cannot read all data. Bytes read: 0. Bytes expected: 1., Stack trace (when copying this message, always include the line
+s below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::ReadBuffer::readStrict(char*, unsigned long) @ 0xe67656f in /usr/bin/clickhouse
+3. DB::AggregateFunctionArgMinMax<DB::AggregateFunctionArgMinMaxData<DB::SingleValueDataString, DB::AggregateFunctionMaxData<DB::SingleValueDataFixed<unsigned int> > > >::deserialize(cha
+r*, DB::ReadBuffer&, DB::Arena*) const @ 0xec09c2f in /usr/bin/clickhouse
+4. DB::DataTypeAggregateFunction::deserializeBinary(DB::IColumn&, DB::ReadBuffer&) const @ 0x15588ce1 in /usr/bin/clickhouse
+5. DB::IMergeTreeDataPart::loadIndex() @ 0x160b8e9d in /usr/bin/clickhouse
+6. DB::IMergeTreeDataPart::loadColumnsChecksumsIndexes(bool, bool) @ 0x160b90ca in /usr/bin/clickhouse
+7. DB::DataPartsExchange::Fetcher::downloadPartToDisk(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1:
+:char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::unique_ptr<DB::IRese
+rvation, std::__1::default_delete<DB::IReservation> >, DB::PooledReadWriteBufferFromHTTP&) @ 0x1609a083 in /usr/bin/clickhouse
+8. DB::DataPartsExchange::Fetcher::fetchPart(std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator
+<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocat
+or<char> > const&, int, DB::ConnectionTimeouts const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1
+::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, 
+std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x1609d6aa in /usr/bin/clickhouse
+9. ? @ 0x15f1f4de in /usr/bin/clickhouse
+10. DB::StorageReplicatedMergeTree::fetchPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::shared_ptr<DB::StorageInMemoryMetada
+ta const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned long, std::__1::shared_ptr<zkutil::ZooKeeper>) @ 0x15f6bbdc
+ in /usr/bin/clickhouse
+11. DB::StorageReplicatedMergeTree::executeFetch(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f6df8d in /usr/bin/clickhouse
+12. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f70581 in /usr/bin/clickhouse
+13. ? @ 0x15f7097d in /usr/bin/clickhouse
+14. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.451911 [ 17210 ] {} <Error> flow_origin_multi_prod.source_weixi_tf_f_user_newest_local: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicatedMerg
+eTree::LogEntryPtr&)>: Code: 33, e.displayText() = DB::Exception: Cannot read all data. Bytes read: 0. Bytes expected: 1., Stack trace (when copying this message, always include the line
+s below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::ReadBuffer::readStrict(char*, unsigned long) @ 0xe67656f in /usr/bin/clickhouse
+3. DB::AggregateFunctionArgMinMax<DB::AggregateFunctionArgMinMaxData<DB::SingleValueDataString, DB::AggregateFunctionMaxData<DB::SingleValueDataFixed<unsigned int> > > >::deserialize(cha
+r*, DB::ReadBuffer&, DB::Arena*) const @ 0xec09c2f in /usr/bin/clickhouse
+4. DB::DataTypeAggregateFunction::deserializeBinary(DB::IColumn&, DB::ReadBuffer&) const @ 0x15588ce1 in /usr/bin/clickhouse
+5. DB::IMergeTreeDataPart::loadIndex() @ 0x160b8e9d in /usr/bin/clickhouse
+6. DB::IMergeTreeDataPart::loadColumnsChecksumsIndexes(bool, bool) @ 0x160b90ca in /usr/bin/clickhouse
+7. DB::DataPartsExchange::Fetcher::downloadPartToDisk(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1:
+:char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::unique_ptr<DB::IRese
+rvation, std::__1::default_delete<DB::IReservation> >, DB::PooledReadWriteBufferFromHTTP&) @ 0x1609a083 in /usr/bin/clickhouse
+8. DB::DataPartsExchange::Fetcher::fetchPart(std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator
+<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocat
+or<char> > const&, int, DB::ConnectionTimeouts const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1
+::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, 
+std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x1609d6aa in /usr/bin/clickhouse
+9. ? @ 0x15f1f4de in /usr/bin/clickhouse
+10. DB::StorageReplicatedMergeTree::fetchPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::shared_ptr<DB::StorageInMemoryMetada
+ta const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned long, std::__1::shared_ptr<zkutil::ZooKeeper>) @ 0x15f6bbdc
+ in /usr/bin/clickhouse
+11. DB::StorageReplicatedMergeTree::executeFetch(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f6df8d in /usr/bin/clickhouse
+12. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f70581 in /usr/bin/clickhouse
+13. ? @ 0x15f7097d in /usr/bin/clickhouse
+14. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.623798 [ 17214 ] {} <Error> flow_origin_multi_prod.source_weixi_tf_f_user_newest_local: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicatedMerg
+eTree::LogEntryPtr&)>: Code: 33, e.displayText() = DB::Exception: Cannot read all data. Bytes read: 0. Bytes expected: 1., Stack trace (when copying this message, always include the line
+s below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::ReadBuffer::readStrict(char*, unsigned long) @ 0xe67656f in /usr/bin/clickhouse
+3. DB::AggregateFunctionArgMinMax<DB::AggregateFunctionArgMinMaxData<DB::SingleValueDataString, DB::AggregateFunctionMaxData<DB::SingleValueDataFixed<unsigned int> > > >::deserialize(cha
+r*, DB::ReadBuffer&, DB::Arena*) const @ 0xec09c2f in /usr/bin/clickhouse
+4. DB::DataTypeAggregateFunction::deserializeBinary(DB::IColumn&, DB::ReadBuffer&) const @ 0x15588ce1 in /usr/bin/clickhouse
+5. DB::IMergeTreeDataPart::loadIndex() @ 0x160b8e9d in /usr/bin/clickhouse
+6. DB::IMergeTreeDataPart::loadColumnsChecksumsIndexes(bool, bool) @ 0x160b90ca in /usr/bin/clickhouse
+7. DB::DataPartsExchange::Fetcher::downloadPartToDisk(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1:
+:char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::unique_ptr<DB::IRese
+rvation, std::__1::default_delete<DB::IReservation> >, DB::PooledReadWriteBufferFromHTTP&) @ 0x1609a083 in /usr/bin/clickhouse
+8. DB::DataPartsExchange::Fetcher::fetchPart(std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator
+<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocat
+or<char> > const&, int, DB::ConnectionTimeouts const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1
+::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, 
+std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x1609d6aa in /usr/bin/clickhouse
+9. ? @ 0x15f1f4de in /usr/bin/clickhouse
+10. DB::StorageReplicatedMergeTree::fetchPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::shared_ptr<DB::StorageInMemoryMetada
+ta const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned long, std::__1::shared_ptr<zkutil::ZooKeeper>) @ 0x15f6bbdc
+ in /usr/bin/clickhouse
+11. DB::StorageReplicatedMergeTree::executeFetch(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f6df8d in /usr/bin/clickhouse
+12. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f70581 in /usr/bin/clickhouse
+13. ? @ 0x15f7097d in /usr/bin/clickhouse
+14. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.623871 [ 17219 ] {} <Error> flow_origin_multi_prod.source_weixi_tf_f_user_newest_local: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicatedMerg
+eTree::LogEntryPtr&)>: Code: 33, e.displayText() = DB::Exception: Cannot read all data. Bytes read: 0. Bytes expected: 1., Stack trace (when copying this message, always include the line
+s below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::ReadBuffer::readStrict(char*, unsigned long) @ 0xe67656f in /usr/bin/clickhouse
+3. DB::AggregateFunctionArgMinMax<DB::AggregateFunctionArgMinMaxData<DB::SingleValueDataString, DB::AggregateFunctionMaxData<DB::SingleValueDataFixed<unsigned int> > > >::deserialize(cha
+r*, DB::ReadBuffer&, DB::Arena*) const @ 0xec09c2f in /usr/bin/clickhouse
+4. DB::DataTypeAggregateFunction::deserializeBinary(DB::IColumn&, DB::ReadBuffer&) const @ 0x15588ce1 in /usr/bin/clickhouse
+5. DB::IMergeTreeDataPart::loadIndex() @ 0x160b8e9d in /usr/bin/clickhouse
+6. DB::IMergeTreeDataPart::loadColumnsChecksumsIndexes(bool, bool) @ 0x160b90ca in /usr/bin/clickhouse
+7. DB::DataPartsExchange::Fetcher::downloadPartToDisk(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1:
+:char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::unique_ptr<DB::IRese
+rvation, std::__1::default_delete<DB::IReservation> >, DB::PooledReadWriteBufferFromHTTP&) @ 0x1609a083 in /usr/bin/clickhouse
+8. DB::DataPartsExchange::Fetcher::fetchPart(std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator
+<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocat
+or<char> > const&, int, DB::ConnectionTimeouts const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1
+::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, 
+std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x1609d6aa in /usr/bin/clickhouse
+9. ? @ 0x15f1f4de in /usr/bin/clickhouse
+10. DB::StorageReplicatedMergeTree::fetchPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::shared_ptr<DB::StorageInMemoryMetada
+ta const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned long, std::__1::shared_ptr<zkutil::ZooKeeper>) @ 0x15f6bbdc
+ in /usr/bin/clickhouse
+11. DB::StorageReplicatedMergeTree::executeFetch(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f6df8d in /usr/bin/clickhouse
+12. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f70581 in /usr/bin/clickhouse
+13. ? @ 0x15f7097d in /usr/bin/clickhouse
+14. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.623923 [ 17212 ] {} <Error> flow_origin_multi_prod.source_weixi_tf_f_user_newest_local: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicatedMerg
+eTree::LogEntryPtr&)>: Code: 33, e.displayText() = DB::Exception: Cannot read all data. Bytes read: 0. Bytes expected: 1., Stack trace (when copying this message, always include the line
+s below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::ReadBuffer::readStrict(char*, unsigned long) @ 0xe67656f in /usr/bin/clickhouse
+3. DB::AggregateFunctionArgMinMax<DB::AggregateFunctionArgMinMaxData<DB::SingleValueDataString, DB::AggregateFunctionMaxData<DB::SingleValueDataFixed<unsigned int> > > >::deserialize(cha
+r*, DB::ReadBuffer&, DB::Arena*) const @ 0xec09c2f in /usr/bin/clickhouse
+4. DB::DataTypeAggregateFunction::deserializeBinary(DB::IColumn&, DB::ReadBuffer&) const @ 0x15588ce1 in /usr/bin/clickhouse
+5. DB::IMergeTreeDataPart::loadIndex() @ 0x160b8e9d in /usr/bin/clickhouse
+6. DB::IMergeTreeDataPart::loadColumnsChecksumsIndexes(bool, bool) @ 0x160b90ca in /usr/bin/clickhouse
+7. DB::DataPartsExchange::Fetcher::downloadPartToDisk(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1:
+:char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::unique_ptr<DB::IRese
+rvation, std::__1::default_delete<DB::IReservation> >, DB::PooledReadWriteBufferFromHTTP&) @ 0x1609a083 in /usr/bin/clickhouse
+8. DB::DataPartsExchange::Fetcher::fetchPart(std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator
+<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocat
+or<char> > const&, int, DB::ConnectionTimeouts const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1
+::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, 
+std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x1609d6aa in /usr/bin/clickhouse
+9. ? @ 0x15f1f4de in /usr/bin/clickhouse
+10. DB::StorageReplicatedMergeTree::fetchPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::shared_ptr<DB::StorageInMemoryMetada
+ta const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned long, std::__1::shared_ptr<zkutil::ZooKeeper>) @ 0x15f6bbdc
+ in /usr/bin/clickhouse
+11. DB::StorageReplicatedMergeTree::executeFetch(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f6df8d in /usr/bin/clickhouse
+12. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f70581 in /usr/bin/clickhouse
+13. ? @ 0x15f7097d in /usr/bin/clickhouse
+14. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.623947 [ 17224 ] {} <Error> flow_origin_multi_prod.source_weixi_tf_f_user_newest_local: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicatedMerg
+eTree::LogEntryPtr&)>: Code: 33, e.displayText() = DB::Exception: Cannot read all data. Bytes read: 0. Bytes expected: 1., Stack trace (when copying this message, always include the line
+s below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::ReadBuffer::readStrict(char*, unsigned long) @ 0xe67656f in /usr/bin/clickhouse
+3. DB::AggregateFunctionArgMinMax<DB::AggregateFunctionArgMinMaxData<DB::SingleValueDataString, DB::AggregateFunctionMaxData<DB::SingleValueDataFixed<unsigned int> > > >::deserialize(cha
+r*, DB::ReadBuffer&, DB::Arena*) const @ 0xec09c2f in /usr/bin/clickhouse
+4. DB::DataTypeAggregateFunction::deserializeBinary(DB::IColumn&, DB::ReadBuffer&) const @ 0x15588ce1 in /usr/bin/clickhouse
+5. DB::IMergeTreeDataPart::loadIndex() @ 0x160b8e9d in /usr/bin/clickhouse
+6. DB::IMergeTreeDataPart::loadColumnsChecksumsIndexes(bool, bool) @ 0x160b90ca in /usr/bin/clickhouse
+7. DB::DataPartsExchange::Fetcher::downloadPartToDisk(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1:
+:char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::unique_ptr<DB::IRese
+rvation, std::__1::default_delete<DB::IReservation> >, DB::PooledReadWriteBufferFromHTTP&) @ 0x1609a083 in /usr/bin/clickhouse
+8. DB::DataPartsExchange::Fetcher::fetchPart(std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator
+<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocat
+or<char> > const&, int, DB::ConnectionTimeouts const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1
+::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, std::__1::basic_string<char, 
+std::__1::char_traits<char>, std::__1::allocator<char> > const&) @ 0x1609d6aa in /usr/bin/clickhouse
+9. ? @ 0x15f1f4de in /usr/bin/clickhouse
+10. DB::StorageReplicatedMergeTree::fetchPart(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::shared_ptr<DB::StorageInMemoryMetada
+ta const> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, unsigned long, std::__1::shared_ptr<zkutil::ZooKeeper>) @ 0x15f6bbdc
+ in /usr/bin/clickhouse
+11. DB::StorageReplicatedMergeTree::executeFetch(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f6df8d in /usr/bin/clickhouse
+12. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f70581 in /usr/bin/clickhouse
+13. ? @ 0x15f7097d in /usr/bin/clickhouse
+14. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+15. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+16. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+17. ? @ 0x16098e22 in /usr/bin/clickhouse
+18. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+19. ? @ 0xe65e093 in /usr/bin/clickhouse
+20. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+21. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:31.773614 [ 19007 ] {} <Fatal> BaseDaemon: ########################################
+2021.11.19 20:32:31.773690 [ 19007 ] {} <Fatal> BaseDaemon: (version 20.8.11.17 (official build), no build id) (from thread 17218) (no query) Received signal Segmentation fault (11)
+2021.11.19 20:32:31.773714 [ 19007 ] {} <Fatal> BaseDaemon: Address: NULL pointer. Access: read. Unknown si_code.
+2021.11.19 20:32:31.773742 [ 19007 ] {} <Fatal> BaseDaemon: Stack trace: 0x160c0641 0x160b1588 0x160e7373 0x16100ffd 0x15f3d3be 0x15f405e4 0x15f7056b 0x15f7097d 0x162b5f42 0x15f20e7e 0x1
+60984e3 0x16098e22 0xe65fba7 0xe65e093 0x7f2640916dd5 0x7f2640233ead
+2021.11.19 20:32:31.773854 [ 19007 ] {} <Fatal> BaseDaemon: 3. std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::ch
+ar_traits<char>, std::__1::allocator<char> >, DB::ColumnSize>, void*>*> std::__1::__hash_table<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::
+__1::allocator<char> >, DB::ColumnSize>, std::__1::__unordered_map_hasher<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_ty
+pe<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, DB::ColumnSize>, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::_
+_1::allocator<char> > >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::__hash_value_type<std::__
+1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, DB::ColumnSize>, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::al
+locator<char> > >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, DB::ColumnSize> > >::find
+<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > >(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) con
+st @ 0x160c0641 in /usr/bin/clickhouse
+2021.11.19 20:32:31.773894 [ 19007 ] {} <Fatal> BaseDaemon: 4. DB::IMergeTreeDataPart::getColumnSize(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >
+ const&, DB::IDataType const&) const @ 0x160b1588 in /usr/bin/clickhouse
+2021.11.19 20:32:31.773913 [ 19007 ] {} <Fatal> BaseDaemon: 5. DB::MergeTreeData::removePartContributionToColumnSizes(std::__1::shared_ptr<DB::IMergeTreeDataPart const> const&) @ 0x160e7
+373 in /usr/bin/clickhouse
+2021.11.19 20:32:31.773930 [ 19007 ] {} <Fatal> BaseDaemon: 6. DB::MergeTreeData::Transaction::commit(std::__1::unique_lock<std::__1::mutex>*) @ 0x16100ffd in /usr/bin/clickhouse
+2021.11.19 20:32:31.773945 [ 19007 ] {} <Fatal> BaseDaemon: 7. DB::StorageReplicatedMergeTree::checkPartChecksumsAndCommit(DB::MergeTreeData::Transaction&, std::__1::shared_ptr<DB::IMerg
+eTreeDataPart const> const&) @ 0x15f3d3be in /usr/bin/clickhouse
+2021.11.19 20:32:31.773956 [ 19007 ] {} <Fatal> BaseDaemon: 8. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f405e4 in /usr/bin/clickhouse
+2021.11.19 20:32:31.773963 [ 19007 ] {} <Fatal> BaseDaemon: 9. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+2021.11.19 20:32:31.773974 [ 19007 ] {} <Fatal> BaseDaemon: 10. ? @ 0x15f7097d in /usr/bin/clickhouse
+2021.11.19 20:32:31.773990 [ 19007 ] {} <Fatal> BaseDaemon: 11. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::share
+d_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+2021.11.19 20:32:31.774004 [ 19007 ] {} <Fatal> BaseDaemon: 12. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+2021.11.19 20:32:31.774024 [ 19007 ] {} <Fatal> BaseDaemon: 13. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+2021.11.19 20:32:31.774033 [ 19007 ] {} <Fatal> BaseDaemon: 14. ? @ 0x16098e22 in /usr/bin/clickhouse
+2021.11.19 20:32:31.774055 [ 19007 ] {} <Fatal> BaseDaemon: 15. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/click
+house
+2021.11.19 20:32:31.774067 [ 19007 ] {} <Fatal> BaseDaemon: 16. ? @ 0xe65e093 in /usr/bin/clickhouse
+2021.11.19 20:32:31.774088 [ 19007 ] {} <Fatal> BaseDaemon: 17. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+2021.11.19 20:32:31.774108 [ 19007 ] {} <Fatal> BaseDaemon: 18. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+2021.11.19 20:32:32.842207 [ 17217 ] {} <Error> flow_origin_multi_prod.`.inner.v_visit_overview_monthly_local`: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicated
+MergeTree::LogEntryPtr&)>: Code: 128, e.displayText() = DB::Exception: Too large array size: (while reading column key_words): (while reading from part /data/clickhouse/data/flow_origin_
+multi_prod/%2Einner%2Ev_visit_overview_monthly_local/20210601_0_2534854_10759/ from mark 0 with max_rows_to_read = 3902): While executing MergeTreeSequentialSource, Stack trace (when cop
+ying this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::GroupArrayNumericImpl<char8_t, DB::GroupArrayTrait<false, (DB::Sampler)0> >::deserialize(char*, DB::ReadBuffer&, DB::Arena*) const @ 0xe865768 in /usr/bin/clickhouse
+3. DB::DataTypeAggregateFunction::deserializeBinaryBulk(DB::IColumn&, DB::ReadBuffer&, unsigned long, double) const @ 0x15589515 in /usr/bin/clickhouse
+4. DB::MergeTreeReaderWide::readData(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::IDataType const&, DB::IColumn&, unsigned long, bool
+, unsigned long, bool) @ 0x16221566 in /usr/bin/clickhouse
+5. DB::MergeTreeReaderWide::readRows(unsigned long, bool, unsigned long, std::__1::vector<COW<DB::IColumn>::immutable_ptr<DB::IColumn>, std::__1::allocator<COW<DB::IColumn>::immutable_pt
+r<DB::IColumn> > >&) @ 0x162217ce in /usr/bin/clickhouse
+6. DB::MergeTreeSequentialSource::generate() @ 0x1624685b in /usr/bin/clickhouse
+7. DB::ISource::work() @ 0x163e821b in /usr/bin/clickhouse
+8. DB::SourceWithProgress::work() @ 0x16615de7 in /usr/bin/clickhouse
+9. ? @ 0x1641d9a0 in /usr/bin/clickhouse
+10. ? @ 0x164228e4 in /usr/bin/clickhouse
+11. DB::PipelineExecutor::executeStep(std::__1::atomic<bool>*) @ 0x16423dc1 in /usr/bin/clickhouse
+12. DB::PullingPipelineExecutor::pull(DB::Chunk&) @ 0x1642ed39 in /usr/bin/clickhouse
+13. DB::PullingPipelineExecutor::pull(DB::Block&) @ 0x1642f716 in /usr/bin/clickhouse
+14. DB::PipelineExecutingBlockInputStream::readImpl() @ 0x1641cbd8 in /usr/bin/clickhouse
+15. DB::IBlockInputStream::read() @ 0x155611cd in /usr/bin/clickhouse
+16. DB::MergeTreeDataMergerMutator::mergePartsToTemporaryPart(DB::FutureMergedMutatedPart const&, std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::MergeListEntry&, std
+::__1::shared_ptr<DB::RWLockImpl::LockHolderImpl>&, long, std::__1::unique_ptr<DB::IReservation, std::__1::default_delete<DB::IReservation> > const&, bool) @ 0x161357bc in /usr/bin/click
+house
+17. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f40525 in /usr/bin/clickhouse
+18. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+19. ? @ 0x15f7097d in /usr/bin/clickhouse
+20. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+21. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+22. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+23. ? @ 0x16098e22 in /usr/bin/clickhouse
+24. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+25. ? @ 0xe65e093 in /usr/bin/clickhouse
+26. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+27. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:33.000938 [ 17223 ] {} <Error> flow_origin_multi_prod.`.inner.v_visit_overview_monthly_local`: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicated
+MergeTree::LogEntryPtr&)>: Code: 128, e.displayText() = DB::Exception: Too large array size: (while reading column key_words): (while reading from part /data/clickhouse/data/flow_origin_
+multi_prod/%2Einner%2Ev_visit_overview_monthly_local/20210501_0_1755978_5180/ from mark 0 with max_rows_to_read = 2498): While executing MergeTreeSequentialSource, Stack trace (when copy
+ing this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::GroupArrayNumericImpl<char8_t, DB::GroupArrayTrait<false, (DB::Sampler)0> >::deserialize(char*, DB::ReadBuffer&, DB::Arena*) const @ 0xe865768 in /usr/bin/clickhouse
+3. DB::DataTypeAggregateFunction::deserializeBinaryBulk(DB::IColumn&, DB::ReadBuffer&, unsigned long, double) const @ 0x15589515 in /usr/bin/clickhouse
+4. DB::MergeTreeReaderWide::readData(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::IDataType const&, DB::IColumn&, unsigned long, bool
+, unsigned long, bool) @ 0x16221566 in /usr/bin/clickhouse
+5. DB::MergeTreeReaderWide::readRows(unsigned long, bool, unsigned long, std::__1::vector<COW<DB::IColumn>::immutable_ptr<DB::IColumn>, std::__1::allocator<COW<DB::IColumn>::immutable_pt
+r<DB::IColumn> > >&) @ 0x162217ce in /usr/bin/clickhouse
+6. DB::MergeTreeSequentialSource::generate() @ 0x1624685b in /usr/bin/clickhouse
+7. DB::ISource::work() @ 0x163e821b in /usr/bin/clickhouse
+8. DB::SourceWithProgress::work() @ 0x16615de7 in /usr/bin/clickhouse
+9. ? @ 0x1641d9a0 in /usr/bin/clickhouse
+10. ? @ 0x164228e4 in /usr/bin/clickhouse
+11. DB::PipelineExecutor::executeStep(std::__1::atomic<bool>*) @ 0x16423dc1 in /usr/bin/clickhouse
+12. DB::PullingPipelineExecutor::pull(DB::Chunk&) @ 0x1642ed39 in /usr/bin/clickhouse
+13. DB::PullingPipelineExecutor::pull(DB::Block&) @ 0x1642f716 in /usr/bin/clickhouse
+14. DB::PipelineExecutingBlockInputStream::readImpl() @ 0x1641cbd8 in /usr/bin/clickhouse
+15. DB::IBlockInputStream::read() @ 0x155611cd in /usr/bin/clickhouse
+16. DB::MergeTreeDataMergerMutator::mergePartsToTemporaryPart(DB::FutureMergedMutatedPart const&, std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::MergeListEntry&, std
+::__1::shared_ptr<DB::RWLockImpl::LockHolderImpl>&, long, std::__1::unique_ptr<DB::IReservation, std::__1::default_delete<DB::IReservation> > const&, bool) @ 0x161357bc in /usr/bin/click
+house
+17. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f40525 in /usr/bin/clickhouse
+18. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+19. ? @ 0x15f7097d in /usr/bin/clickhouse
+20. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+21. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+22. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+23. ? @ 0x16098e22 in /usr/bin/clickhouse
+24. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+25. ? @ 0xe65e093 in /usr/bin/clickhouse
+26. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+27. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:35.948336 [ 17213 ] {} <Error> flow_origin_multi_prod.`.inner.v_visit_overview_monthly_local`: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicated
+MergeTree::LogEntryPtr&)>: Code: 128, e.displayText() = DB::Exception: Too large array size: (while reading column key_words): (while reading from part /data/clickhouse/data/flow_origin_
+multi_prod/%2Einner%2Ev_visit_overview_monthly_local/20210901_0_3482401_9509/ from mark 0 with max_rows_to_read = 4295): While executing MergeTreeSequentialSource, Stack trace (when copy
+ing this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::GroupArrayNumericImpl<char8_t, DB::GroupArrayTrait<false, (DB::Sampler)0> >::deserialize(char*, DB::ReadBuffer&, DB::Arena*) const @ 0xe865768 in /usr/bin/clickhouse
+3. DB::DataTypeAggregateFunction::deserializeBinaryBulk(DB::IColumn&, DB::ReadBuffer&, unsigned long, double) const @ 0x15589515 in /usr/bin/clickhouse
+4. DB::MergeTreeReaderWide::readData(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::IDataType const&, DB::IColumn&, unsigned long, bool
+, unsigned long, bool) @ 0x16221566 in /usr/bin/clickhouse
+5. DB::MergeTreeReaderWide::readRows(unsigned long, bool, unsigned long, std::__1::vector<COW<DB::IColumn>::immutable_ptr<DB::IColumn>, std::__1::allocator<COW<DB::IColumn>::immutable_pt
+r<DB::IColumn> > >&) @ 0x162217ce in /usr/bin/clickhouse
+6. DB::MergeTreeSequentialSource::generate() @ 0x1624685b in /usr/bin/clickhouse
+7. DB::ISource::work() @ 0x163e821b in /usr/bin/clickhouse
+8. DB::SourceWithProgress::work() @ 0x16615de7 in /usr/bin/clickhouse
+9. ? @ 0x1641d9a0 in /usr/bin/clickhouse
+10. ? @ 0x164228e4 in /usr/bin/clickhouse
+11. DB::PipelineExecutor::executeStep(std::__1::atomic<bool>*) @ 0x16423dc1 in /usr/bin/clickhouse
+12. DB::PullingPipelineExecutor::pull(DB::Chunk&) @ 0x1642ed39 in /usr/bin/clickhouse
+13. DB::PullingPipelineExecutor::pull(DB::Block&) @ 0x1642f716 in /usr/bin/clickhouse
+14. DB::PipelineExecutingBlockInputStream::readImpl() @ 0x1641cbd8 in /usr/bin/clickhouse
+15. DB::IBlockInputStream::read() @ 0x155611cd in /usr/bin/clickhouse
+16. DB::MergeTreeDataMergerMutator::mergePartsToTemporaryPart(DB::FutureMergedMutatedPart const&, std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::MergeListEntry&, std
+::__1::shared_ptr<DB::RWLockImpl::LockHolderImpl>&, long, std::__1::unique_ptr<DB::IReservation, std::__1::default_delete<DB::IReservation> > const&, bool) @ 0x161357bc in /usr/bin/click
+house
+17. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f40525 in /usr/bin/clickhouse
+18. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+19. ? @ 0x15f7097d in /usr/bin/clickhouse
+20. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+21. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+22. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+23. ? @ 0x16098e22 in /usr/bin/clickhouse
+24. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+25. ? @ 0xe65e093 in /usr/bin/clickhouse
+26. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+27. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:35.949109 [ 17220 ] {} <Error> flow_origin_multi_prod.`.inner.v_visit_overview_monthly_local`: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicated
+MergeTree::LogEntryPtr&)>: Code: 128, e.displayText() = DB::Exception: Too large array size: (while reading column key_words): (while reading from part /data/clickhouse/data/flow_origin_
+multi_prod/%2Einner%2Ev_visit_overview_monthly_local/20210801_0_4831340_9295/ from mark 0 with max_rows_to_read = 3571): While executing MergeTreeSequentialSource, Stack trace (when copy
+ing this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::GroupArrayNumericImpl<char8_t, DB::GroupArrayTrait<false, (DB::Sampler)0> >::deserialize(char*, DB::ReadBuffer&, DB::Arena*) const @ 0xe865768 in /usr/bin/clickhouse
+3. DB::DataTypeAggregateFunction::deserializeBinaryBulk(DB::IColumn&, DB::ReadBuffer&, unsigned long, double) const @ 0x15589515 in /usr/bin/clickhouse
+4. DB::MergeTreeReaderWide::readData(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::IDataType const&, DB::IColumn&, unsigned long, bool
+, unsigned long, bool) @ 0x16221566 in /usr/bin/clickhouse
+5. DB::MergeTreeReaderWide::readRows(unsigned long, bool, unsigned long, std::__1::vector<COW<DB::IColumn>::immutable_ptr<DB::IColumn>, std::__1::allocator<COW<DB::IColumn>::immutable_pt
+r<DB::IColumn> > >&) @ 0x162217ce in /usr/bin/clickhouse
+6. DB::MergeTreeSequentialSource::generate() @ 0x1624685b in /usr/bin/clickhouse
+7. DB::ISource::work() @ 0x163e821b in /usr/bin/clickhouse
+8. DB::SourceWithProgress::work() @ 0x16615de7 in /usr/bin/clickhouse
+9. ? @ 0x1641d9a0 in /usr/bin/clickhouse
+10. ? @ 0x164228e4 in /usr/bin/clickhouse
+11. DB::PipelineExecutor::executeStep(std::__1::atomic<bool>*) @ 0x16423dc1 in /usr/bin/clickhouse
+12. DB::PullingPipelineExecutor::pull(DB::Chunk&) @ 0x1642ed39 in /usr/bin/clickhouse
+13. DB::PullingPipelineExecutor::pull(DB::Block&) @ 0x1642f716 in /usr/bin/clickhouse
+14. DB::PipelineExecutingBlockInputStream::readImpl() @ 0x1641cbd8 in /usr/bin/clickhouse
+15. DB::IBlockInputStream::read() @ 0x155611cd in /usr/bin/clickhouse
+16. DB::MergeTreeDataMergerMutator::mergePartsToTemporaryPart(DB::FutureMergedMutatedPart const&, std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::MergeListEntry&, std
+::__1::shared_ptr<DB::RWLockImpl::LockHolderImpl>&, long, std::__1::unique_ptr<DB::IReservation, std::__1::default_delete<DB::IReservation> > const&, bool) @ 0x161357bc in /usr/bin/click
+house
+17. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f40525 in /usr/bin/clickhouse
+18. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+19. ? @ 0x15f7097d in /usr/bin/clickhouse
+20. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+21. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+22. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+23. ? @ 0x16098e22 in /usr/bin/clickhouse
+24. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+25. ? @ 0xe65e093 in /usr/bin/clickhouse
+26. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+27. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:36.088395 [ 18716 ] {a79c1c7f-61ed-4b45-a3cd-1b6cd8f0e75d} <Error> executeQuery: Code: 16, e.displayText() = DB::Exception: No such column remark3 in table flow_origin_m
+ulti_prod.numberSelect_order_local (version 20.8.11.17 (official build)) (from 10.172.68.155:16874) (in query: INSERT INTO flow_origin_multi_prod.numberSelect_order_local (order_no, crea
+te_time, pre_num, province_name, city_name, income_money, topay_money, order_state_desc, sys_channel_desc, bus_channel_desc, order_developer_id, order_developer_name, account_developer_i
+d, account_developer_name, cust_name, pspt_type_desc, pspt_no_de, mobile_phone, gender, age, project_id, project_name, partner_id, partner_name, product_code, product_p_name, goods_id, g
+oods_name, post_province_name, post_city_name, post_district_name, post_address, refund_time, lgts_name, lgts_order, lgts_sign_time, lgts_accept_state, active_state, act_operator_id, act
+ive_time, iccid, repreorder_flag, head_grid_name, channel, channel_two, channel_three, channel_17, vice_cust_name, vice_pspt_type, vice_pspt_no, vice_pre_num, cust_id, vice_order_staff, 
+vice_developer_id, vice_call_staff, vice_remark, line_mode, handle_pattern, grid_id, grid_name, grid_apply_name, grid_despatcher_phone, msg_file_hour, first_charge_amount, first_charge_t
+ime, device_brand_name, cbss_order_id, account_time, user_id, cust_ip, age_50, develope_province_name, develope_city_name, develope_code, developer_name, developer_depart_code, developer
+_depart_name, xhzw_type, eliminate_type, net_flag, order_different_net, account_different_net, order_id, tid, referrer_name, referrer_phone, despatcher_name, despatcher_phone, change_msg
+_type, goods_type_code, repeat_two_type, dsp_referrer_code, dsp_channel_code, is_k, b_channel_type_id, hf_first_name, hf_first_time, hf_operator_name, hf_operate_time, e0_first_name, e0_
+first_time, cancel_reason, openid, order_level, dsp_channel_name, qzk_type, allocate_time_first, allocate_time_last, delivery_hour, addr_part, dey_allocate_time, dey_channel_name, dey_ch
+annel_code, dey_county_name, self_user_name, self_user_phone, self_developer_id, self_channel_code, self_channel_name, self_channel_id, self_developer_name, self_developer_phone, three_d
+ifferent_province, channel_attr_code, firstmon_bill_desc, c102_operator_id, c102_operator_name, d101_operator_id, d101_operator_name, change_pspt, login_ip, final_order_state_cj, conless
+_type, udp_order, pay_org_name, cust_remark, is_zdxs, wt_mc_id, optproduct_name, acdepart_name, user_tag, is_bp07, mre_active_state, pay_state, pay_type, active_cancel_time, is_bdwkzs, d
+iff_province_tag, deliver_type_from_b0, is_cjzcl, is_app, risk_code, eliminate_type_all, touch_level1_name, touch_level2_name, evil_tag, login_province_name, login_city_name, vice_cbss_o
+id, contract_id, contract_name, msg_staff_id, parent_phone_no, cancel_time, vice_product_id, choose_scene, ex_out_caller, is_change_pre, cm03_pre_num, remark_cont, deliver_type_ca, book_
+start_time, book_end_time, cm03_operate_name, cm03_operator_phone, cm03_operate_time, order_start_time, order_end_time, remark, captcha_check, mobile_first_time, dph_deal_type, province_
+conf_repeat_cert, ht_flag_0, ht_flag_1, is_xcx_cancel, is_baiyuan, baiyuan_time, finance_name, finance_create_time, finance_busi_type, is_finance, remark3, remark4, remark5, remark6, rem
+ark7, remark8, remark9, createDate) VALUES), Stack trace (when copying this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. ? @ 0x15974208 in /usr/bin/clickhouse
+3. DB::InterpreterInsertQuery::execute() @ 0x1596f9af in /usr/bin/clickhouse
+4. ? @ 0x15d043f2 in /usr/bin/clickhouse
+5. DB::executeQuery(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::Context&, bool, DB::QueryProcessingStage::Enum, bool) @ 0x15d05d52 i
+n /usr/bin/clickhouse
+6. DB::TCPHandler::runImpl() @ 0x163a11d5 in /usr/bin/clickhouse
+7. DB::TCPHandler::run() @ 0x163a1f40 in /usr/bin/clickhouse
+8. Poco::Net::TCPServerConnection::start() @ 0x18bf000b in /usr/bin/clickhouse
+9. Poco::Net::TCPServerDispatcher::run() @ 0x18bf0728 in /usr/bin/clickhouse
+10. Poco::PooledThread::run() @ 0x18d6ee36 in /usr/bin/clickhouse
+11. Poco::ThreadImpl::runnableEntry(void*) @ 0x18d6a230 in /usr/bin/clickhouse
+12. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+13. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+
+2021.11.19 20:32:38.441327 [ 17209 ] {} <Error> flow_origin_multi_prod.`.inner.v_visit_overview_monthly_local`: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicated
+MergeTree::LogEntryPtr&)>: Code: 128, e.displayText() = DB::Exception: Too large array size: (while reading column key_words): (while reading from part /data/clickhouse/data/flow_origin_
+multi_prod/%2Einner%2Ev_visit_overview_monthly_local/20210501_0_1755978_5180/ from mark 0 with max_rows_to_read = 2498): While executing MergeTreeSequentialSource, Stack trace (when copy
+ing this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::GroupArrayNumericImpl<char8_t, DB::GroupArrayTrait<false, (DB::Sampler)0> >::deserialize(char*, DB::ReadBuffer&, DB::Arena*) const @ 0xe865768 in /usr/bin/clickhouse
+3. DB::DataTypeAggregateFunction::deserializeBinaryBulk(DB::IColumn&, DB::ReadBuffer&, unsigned long, double) const @ 0x15589515 in /usr/bin/clickhouse
+4. DB::MergeTreeReaderWide::readData(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::IDataType const&, DB::IColumn&, unsigned long, bool
+, unsigned long, bool) @ 0x16221566 in /usr/bin/clickhouse
+5. DB::MergeTreeReaderWide::readRows(unsigned long, bool, unsigned long, std::__1::vector<COW<DB::IColumn>::immutable_ptr<DB::IColumn>, std::__1::allocator<COW<DB::IColumn>::immutable_pt
+r<DB::IColumn> > >&) @ 0x162217ce in /usr/bin/clickhouse
+6. DB::MergeTreeSequentialSource::generate() @ 0x1624685b in /usr/bin/clickhouse
+7. DB::ISource::work() @ 0x163e821b in /usr/bin/clickhouse
+8. DB::SourceWithProgress::work() @ 0x16615de7 in /usr/bin/clickhouse
+9. ? @ 0x1641d9a0 in /usr/bin/clickhouse
+10. ? @ 0x164228e4 in /usr/bin/clickhouse
+11. DB::PipelineExecutor::executeStep(std::__1::atomic<bool>*) @ 0x16423dc1 in /usr/bin/clickhouse
+12. DB::PullingPipelineExecutor::pull(DB::Chunk&) @ 0x1642ed39 in /usr/bin/clickhouse
+13. DB::PullingPipelineExecutor::pull(DB::Block&) @ 0x1642f716 in /usr/bin/clickhouse
+14. DB::PipelineExecutingBlockInputStream::readImpl() @ 0x1641cbd8 in /usr/bin/clickhouse
+15. DB::IBlockInputStream::read() @ 0x155611cd in /usr/bin/clickhouse
+16. DB::MergeTreeDataMergerMutator::mergePartsToTemporaryPart(DB::FutureMergedMutatedPart const&, std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::MergeListEntry&, std
+::__1::shared_ptr<DB::RWLockImpl::LockHolderImpl>&, long, std::__1::unique_ptr<DB::IReservation, std::__1::default_delete<DB::IReservation> > const&, bool) @ 0x161357bc in /usr/bin/click
+house
+17. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f40525 in /usr/bin/clickhouse
+18. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+19. ? @ 0x15f7097d in /usr/bin/clickhouse
+20. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+21. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+22. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+23. ? @ 0x16098e22 in /usr/bin/clickhouse
+24. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+25. ? @ 0xe65e093 in /usr/bin/clickhouse
+26. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+27. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
+2021.11.19 20:32:39.919793 [ 17219 ] {} <Error> flow_origin_multi_prod.`.inner.v_visit_overview_monthly_local`: DB::StorageReplicatedMergeTree::queueTask()::<lambda(DB::StorageReplicated
+MergeTree::LogEntryPtr&)>: Code: 128, e.displayText() = DB::Exception: Too large array size: (while reading column key_words): (while reading from part /data/clickhouse/data/flow_origin_
+multi_prod/%2Einner%2Ev_visit_overview_monthly_local/20210601_0_2534854_10759/ from mark 0 with max_rows_to_read = 3902): While executing MergeTreeSequentialSource, Stack trace (when cop
+ying this message, always include the lines below):
+
+0. Poco::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0x18cd2050 in /usr/bin/clickhouse
+1. DB::Exception::Exception(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) @ 0xe63232d in /usr/bin/clickhouse
+2. DB::GroupArrayNumericImpl<char8_t, DB::GroupArrayTrait<false, (DB::Sampler)0> >::deserialize(char*, DB::ReadBuffer&, DB::Arena*) const @ 0xe865768 in /usr/bin/clickhouse
+3. DB::DataTypeAggregateFunction::deserializeBinaryBulk(DB::IColumn&, DB::ReadBuffer&, unsigned long, double) const @ 0x15589515 in /usr/bin/clickhouse
+4. DB::MergeTreeReaderWide::readData(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, DB::IDataType const&, DB::IColumn&, unsigned long, bool
+, unsigned long, bool) @ 0x16221566 in /usr/bin/clickhouse
+5. DB::MergeTreeReaderWide::readRows(unsigned long, bool, unsigned long, std::__1::vector<COW<DB::IColumn>::immutable_ptr<DB::IColumn>, std::__1::allocator<COW<DB::IColumn>::immutable_pt
+r<DB::IColumn> > >&) @ 0x162217ce in /usr/bin/clickhouse
+6. DB::MergeTreeSequentialSource::generate() @ 0x1624685b in /usr/bin/clickhouse
+7. DB::ISource::work() @ 0x163e821b in /usr/bin/clickhouse
+8. DB::SourceWithProgress::work() @ 0x16615de7 in /usr/bin/clickhouse
+9. ? @ 0x1641d9a0 in /usr/bin/clickhouse
+10. ? @ 0x164228e4 in /usr/bin/clickhouse
+11. DB::PipelineExecutor::executeStep(std::__1::atomic<bool>*) @ 0x16423dc1 in /usr/bin/clickhouse
+12. DB::PullingPipelineExecutor::pull(DB::Chunk&) @ 0x1642ed39 in /usr/bin/clickhouse
+13. DB::PullingPipelineExecutor::pull(DB::Block&) @ 0x1642f716 in /usr/bin/clickhouse
+14. DB::PipelineExecutingBlockInputStream::readImpl() @ 0x1641cbd8 in /usr/bin/clickhouse
+15. DB::IBlockInputStream::read() @ 0x155611cd in /usr/bin/clickhouse
+16. DB::MergeTreeDataMergerMutator::mergePartsToTemporaryPart(DB::FutureMergedMutatedPart const&, std::__1::shared_ptr<DB::StorageInMemoryMetadata const> const&, DB::MergeListEntry&, std
+::__1::shared_ptr<DB::RWLockImpl::LockHolderImpl>&, long, std::__1::unique_ptr<DB::IReservation, std::__1::default_delete<DB::IReservation> > const&, bool) @ 0x161357bc in /usr/bin/click
+house
+17. DB::StorageReplicatedMergeTree::tryExecuteMerge(DB::ReplicatedMergeTreeLogEntry const&) @ 0x15f40525 in /usr/bin/clickhouse
+18. DB::StorageReplicatedMergeTree::executeLogEntry(DB::ReplicatedMergeTreeLogEntry&) @ 0x15f7056b in /usr/bin/clickhouse
+19. ? @ 0x15f7097d in /usr/bin/clickhouse
+20. DB::ReplicatedMergeTreeQueue::processEntry(std::__1::function<std::__1::shared_ptr<zkutil::ZooKeeper> ()>, std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&, std::__1::function<
+bool (std::__1::shared_ptr<DB::ReplicatedMergeTreeLogEntry>&)>) @ 0x162b5f42 in /usr/bin/clickhouse
+21. DB::StorageReplicatedMergeTree::queueTask() @ 0x15f20e7e in /usr/bin/clickhouse
+22. DB::BackgroundProcessingPool::workLoopFunc() @ 0x160984e3 in /usr/bin/clickhouse
+23. ? @ 0x16098e22 in /usr/bin/clickhouse
+24. ThreadPoolImpl<std::__1::thread>::worker(std::__1::__list_iterator<std::__1::thread, void*>) @ 0xe65fba7 in /usr/bin/clickhouse
+25. ? @ 0xe65e093 in /usr/bin/clickhouse
+26. start_thread @ 0x7dd5 in /usr/lib64/libpthread-2.17.so
+27. __clone @ 0xfdead in /usr/lib64/libc-2.17.so
+ (version 20.8.11.17 (official build))
